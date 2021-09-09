@@ -1,7 +1,6 @@
 import argparse
 import imutils
 import cv2
-from imutils.convenience import resize
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--image", type=str, default="cat.jpg", help="path to input image")
