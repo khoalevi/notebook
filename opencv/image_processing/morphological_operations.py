@@ -33,7 +33,7 @@ for size in kernelSizes:
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, size)
     opening = cv2.morphologyEx(gray, cv2.MORPH_OPEN, kernel)
     cv2.imshow("Opening: ({}. {})".format(size[0], size[1]), opening)
-    cv2.waitKey(0)
+    
 
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
