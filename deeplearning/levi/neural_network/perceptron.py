@@ -14,7 +14,7 @@ class Perceptron:
 
         for epoch in np.arange(0, epochs):
             for (x, target) in zip(X, y):
-                p = self.step(np.dot(self.W, x))
+                p = self.step(np.dot(x, self.W))
 
                 if p != target:
                     error = p - target
@@ -27,4 +27,4 @@ class Perceptron:
         if addBias:
             X = np.c_[X, np.ones((X.shape[0]))]
 
-        return self.step(np.dot(self.W, X))
+        return self.step(np.dot(X, self.W))
