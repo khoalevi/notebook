@@ -14,7 +14,7 @@ class Perceptron:
 
         for epoch in np.arange(0, epochs):
             for (x, target) in zip(X, y):
-                p = self.test(np.dot(self.W, x))
+                p = self.step(np.dot(self.W, x))
 
                 if p != target:
                     error = p - target
