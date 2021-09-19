@@ -23,7 +23,7 @@ class NeuralNetwork:
     def sigmoid_deriv(self, x):
         return x * (1 - x)
 
-    def fit(self, X, y, epochs=1000, verbose=100):
+    def fit(self, X, y, epochs=1000, verbose=1000):
         X = np.c_[X, np.ones((X.shape[0]))]
 
         for epoch in np.arange(0, epochs):
@@ -31,7 +31,7 @@ class NeuralNetwork:
                 self.fit_partial(x, target)
 
             if epoch == 0 or (epoch + 1) % verbose == 0:
-                loss = self.calculate_loss(X, y)
+                loss = self.calc_loss(X, y)
                 print("[INFO] epoch={}, loss={:.7f}".format(epoch + 1, loss))
 
     def fit_partial(self, x, y):
@@ -46,7 +46,7 @@ class NeuralNetwork:
 
         error = A[-1] - y
 
-        D = [error * self.sigmoid_deriv[A[-1]]]
+        D = [error * self.sigmoid_deriv(A[-1])]
 
         for layer in np.arange(len(A) - 2, 0, -1):
             delta = D[-1].dot(self.W[layer].T)
