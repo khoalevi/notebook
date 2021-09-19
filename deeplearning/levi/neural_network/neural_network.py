@@ -23,7 +23,7 @@ class NeuralNetwork:
     def sigmoid_deriv(self, x):
         return x * (1 - x)
 
-    def fit(self, X, y, epochs=1000, verbose=1000):
+    def fit(self, X, y, epochs=1000, verbose=100):
         X = np.c_[X, np.ones((X.shape[0]))]
 
         for epoch in np.arange(0, epochs):
