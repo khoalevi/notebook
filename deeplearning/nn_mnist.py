@@ -1,4 +1,3 @@
-from scipy.sparse import data
 from levi.neural_network import NeuralNetwork
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
