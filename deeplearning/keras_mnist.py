@@ -1,6 +1,5 @@
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import classification_report
-from tensorflow.keras import optimizers
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import SGD
