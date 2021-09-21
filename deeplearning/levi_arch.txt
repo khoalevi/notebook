@@ -1,0 +1,16 @@
+INPUT => [[CONV => RELU => BN]*N => POOL?]*M => [FC => RELU => DO]*K => SOFTMAX
+
+0 <= N <= 3
+M >= 0
+0 <= K <= 2
+
+Rules of Thumb:
+Common input layer sizes include 32×32, 64×64, 96×96, 224×224, 227×227, and 229×229
+The input layer should also be divisible by two multiple times after the first CONV operation is applied
+CONV layers should use smaller filter sizes such as 3×3 and 5×5, larger filter sizes such as 7×7 and 11×11 may be used as the first CONV layer in the network, however, after this initial CONV layer the filter size should drop dramatically
+Commonly use a stride of S = 1 for CONV layers
+Apply zero-padding to my CONV layers to ensure the output dimension size matches the input dimension size
+Personal recommendation is to use POOL layers (rather than CONV layers)
+Most Commonly, max pooling applied over a 2×2 receptive field size and a stride of S = 2
+Should use BN in nearly all situations
+Dropout (DO) is typically applied in between FC layers with a dropout probability of 50% (While not always performed, use small probability, 10-25%)
