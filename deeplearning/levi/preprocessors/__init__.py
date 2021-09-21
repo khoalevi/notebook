@@ -1,1 +1,2 @@
 from .resize_preprocessor import ResizePreprocessor
+from .img_to_arr_preprocessor import ImageToArrayPrepreprocessor
