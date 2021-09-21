@@ -1,1 +1,1 @@
-from .simple_preprocessor import SimplePreprocessor
+from .resize_preprocessor import ResizePreprocessor
