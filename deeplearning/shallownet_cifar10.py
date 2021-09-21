@@ -1,6 +1,6 @@
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import classification_report
-from levi.neural_network.convolution import ShallowNet
+from levi.nn.conv import ShallowNet
 from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.datasets import cifar10
 import matplotlib.pyplot as plt
