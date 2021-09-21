@@ -17,7 +17,7 @@ def convolve(image, kernel):
     for y in np.arange(padY, iH + padY):
         for x in np.arange(padX, iW + padX):
             roi = image[y - padY: y + padY + 1, x - padX: x + padX + 1]
-            conv = (roi * kernel).sum()
+            conv = np.sum((roi * kernel))
             output[y - padY, x - padX] = conv
 
     output = rescale_intensity(output, in_range=(0, 255))
