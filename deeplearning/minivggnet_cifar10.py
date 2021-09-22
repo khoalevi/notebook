@@ -45,8 +45,8 @@ H = model.fit(trainX, trainY, validation_data=(testX, testY),
               batch_size=batchSize, epochs=epochs, verbose=1)
 
 print("[INFO] evaluating network...")
-predictions = model.predict(testX, batch_size=batchSize)
-print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1),
+preds = model.predict(testX, batch_size=batchSize)
+print(classification_report(testY.argmax(axis=1), preds.argmax(axis=1),
                             target_names=labelNames))
 
 plt.style.use("ggplot")
