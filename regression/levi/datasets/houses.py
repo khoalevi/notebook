@@ -24,7 +24,7 @@ def load_house_attributes(inputPath):
     return df
 
 
-def process_house_attribute(df, train, test):
+def process_house_attributes(df, train, test):
     continuous = ["bedrooms", "bathrooms", "area"]
 
     scaler = MinMaxScaler()

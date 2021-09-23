@@ -24,7 +24,7 @@ trainY = train["price"] / maxPrice
 testY = test["price"] / maxPrice
 
 print("[INFO] processing data...")
-(trainX, testX) = houses.process_house_attribute(df, train, test)
+(trainX, testX) = houses.process_house_attributes(df, train, test)
 
 model = mlp.create_mlp(trainX.shape[1], regress=True)
 opt = Adam(lr=1e-3, decay=1e-3 / 200)
