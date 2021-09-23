@@ -9,7 +9,7 @@ import os
 
 def load_house_attributes(inputPath):
     cols = ["bedrooms", "bathrooms", "area", "zipcode", "price"]
-    df = pd.read_csv(inputPath, sep="", header=None, names=cols)
+    df = pd.read_csv(inputPath, sep=" ", header=None, names=cols)
 
     zipcodes = df["zipcode"].value_counts().keys().tolist()
     counts = df["zipcode"].value_counts().tolist()
@@ -25,7 +25,7 @@ def load_house_attributes(inputPath):
 
 
 def process_house_attribute(df, train, test):
-    continuous = ["bedroom", "bathrooms", "area"]
+    continuous = ["bedrooms", "bathrooms", "area"]
 
     scaler = MinMaxScaler()
     trainContinuous = scaler.fit_transform(train[continuous])
