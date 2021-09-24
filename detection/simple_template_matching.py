@@ -25,7 +25,7 @@ result = cv2.matchTemplate(imageGray, templateGray, cv2.TM_CCOEFF_NORMED)
 endX = startX + template.shape[1]
 endY = startY + template.shape[0]
 
-cv2.rectangle(image, (startX, startY), (endX, endY), (0, 255, 0), 2)
+cv2.rectangle(image, (startX, startY), (endX, endY), (0, 255, 0), 3)
 
 cv2.imshow("Output", image)
 cv2.waitKey(0)
